@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_09_24_132957) do
     t.string "manager_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["reference"], name: "index_buildings_on_reference", unique: true
   end
 
   create_table "people", force: :cascade do |t|
@@ -36,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_09_24_132957) do
     t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["reference"], name: "index_people_on_reference", unique: true
   end
 
 end
