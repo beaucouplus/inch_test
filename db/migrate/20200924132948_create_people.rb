@@ -1,7 +1,7 @@
 class CreatePeople < ActiveRecord::Migration[6.0]
   def change
     create_table :people do |t|
-      t.string :reference
+      t.string :reference, index: { unique: true }
       t.string :email
       t.string :home_phone_number
       t.string :mobile_phone_number
