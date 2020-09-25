@@ -1,3 +1,4 @@
 class Building < ApplicationRecord
-  self.primary_key = 'reference'
+  has_many :building_profiles
+  has_one :current_profile, class_name: 'BuildingProfile'
 end
