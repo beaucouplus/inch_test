@@ -4,9 +4,8 @@ class Person < ApplicationRecord
 
   delegate :address, :email, :home_phone_number, :mobile_phone_number, :firstname, :lastname, to: :current_profile
 
-  NO_OVERWRITE = %i[email home_phone_number mobile_phone_number address].freeze
-
   scope :with_profiles, -> { includes(:person_profiles) }
+  default_scope { with_profiles }
 
   def profiles
     person_profiles.persisted

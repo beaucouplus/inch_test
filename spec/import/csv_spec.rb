@@ -33,11 +33,11 @@ describe Import::Csv, type: :csv do
       end
     end
 
-    describe '#tablename' do
+    describe '#target_model' do
       before { subject.import }
 
       it 'imports csv data as an array of hashes' do
-        expect(subject.tablename).to eq('Building')
+        expect(subject.target_model).to eq(Building)
       end
     end
 
