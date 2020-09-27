@@ -1,6 +1,5 @@
 class BuildingProfile < ApplicationRecord
   include Scopes
-  # include AlreadyRecorded
 
   NO_OVERWRITE = [:manager_name].freeze
 
