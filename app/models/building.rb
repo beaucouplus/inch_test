@@ -4,7 +4,7 @@ class Building < ApplicationRecord
 
   delegate :address, :zip_code, :city, :country, :manager_name, to: :current_profile
 
-  scope :with_profiles, -> { includes(:building_profiles) }
+  scope :with_profiles, -> { includes(:building_profiles, :current_profile) }
   default_scope { with_profiles }
 
   def profiles

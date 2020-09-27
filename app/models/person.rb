@@ -4,7 +4,7 @@ class Person < ApplicationRecord
 
   delegate :address, :email, :home_phone_number, :mobile_phone_number, :firstname, :lastname, to: :current_profile
 
-  scope :with_profiles, -> { includes(:person_profiles) }
+  scope :with_profiles, -> { includes(:person_profiles, :current_profile) }
   default_scope { with_profiles }
 
   def profiles
