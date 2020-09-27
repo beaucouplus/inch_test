@@ -1,4 +1,6 @@
 class PersonProfile < ApplicationRecord
+  include OnlyPersisted
+
   belongs_to :person
-  belongs_to :current_person, class_name: 'Person', foreign_key: :current_profile_id, optional: true
+  has_one :current_person, class_name: 'Person', foreign_key: :current_profile_id
 end

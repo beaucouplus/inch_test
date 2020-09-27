@@ -1,4 +1,6 @@
 class BuildingProfile < ApplicationRecord
+  include OnlyPersisted
+
   belongs_to :building
-  belongs_to :current_building, class_name: 'Building', foreign_key: :current_profile_id, optional: true
+  has_one :current_building, class_name: 'Building', foreign_key: :current_profile_id
 end
